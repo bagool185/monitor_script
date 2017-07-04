@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://static.bacalaureat.edu.ro/2017/'
+url = 'http://www.example.com'
 
 action_item = requests.get(url)
 
