@@ -1,27 +1,25 @@
+from bs4 import BeautifulSoup
+
 import time
 import requests
 import webbrowser
 
-#replace the url with whatever you need to monitorize
-url = 'http://www.example.com'
+url = 'http://static.bacalaureat.edu.ro/2017/'
 
+# download the webpage
 action_item = requests.get(url)
 
-#get the length of the content
-current_length = len(action_item.content)
+# soup its content using html5lib parser
+soup = BeautifulSoup(action_item.content, "html5lib")
 
-# get the length of the initial content, which is stored in compare.txt
-# if you want, you can get rid of the file thing and hardcode the length 
-# e.g.
-#if current_length <> 10000:
-#	....
+# store all the hyperlinks in order to compare them
+# to the initial ones
+current_links = str(soup.find_all("a"))
 
 file = open("compare.txt", "r")
-old_length = int(file.read())
+old_links = str(file.read())
 
-# if the length of the 2 contents differs, then the site was updated
-# and your default browser will open at the specified url
-if old_length <> current_length:
+if old_links <> current_links:
 	webbrowser.open_new(url)
 else:
 	print "not yet, fam"
