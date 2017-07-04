@@ -7,4 +7,4 @@ First, run update.py (python update.py in your cmd or terminal) to initialize th
 
 WINDOWS -> save the .bat file and use it in your command prompt as: open_this_pit_up.bat
 
-LINUX -> save the .sh file, use chmod +x in order to make it executable, then use it as ./open_this_pit_up.sh
+LINUX / MacOS -> save the .sh file, use chmod +x in order to make it executable, then use it as ./open_this_pit_up.sh
