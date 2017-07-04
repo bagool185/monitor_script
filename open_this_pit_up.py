@@ -4,7 +4,7 @@ import time
 import requests
 import webbrowser
 
-url = 'http:/wwww.example.com'
+url = 'http://wwww.example.com'
 
 # download the webpage
 action_item = requests.get(url)
